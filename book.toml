@@ -1,0 +1,6 @@
+[book]
+authors = ["lutece"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Be_Frontend_Developer"
