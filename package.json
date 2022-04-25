@@ -1,0 +1,22 @@
+{
+  "name": "be_frontend_developer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mdbook build",
+    "serve": "mdbook serve && mdbook watch",
+    "push": "mdbook build && git add -A && git commit -m 'publish' && git push origin main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lutece/Be_Frontend_Developer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lutece/Be_Frontend_Developer/issues"
+  },
+  "homepage": "https://github.com/Lutece/Be_Frontend_Developer#readme"
+}

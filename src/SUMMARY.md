@@ -1,3 +1,4 @@
 # Summary
 
-- [Chapter 1](./chapter_1.md)
+- [Javascript](./javascript/var.md)
+- [Javascript](./javascript/data.md)

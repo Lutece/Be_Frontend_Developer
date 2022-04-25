@@ -1,6 +1,6 @@
 [book]
 authors = ["lutece"]
-language = "en"
+language = "ko"
 multilingual = false
 src = "src"
 title = "Be_Frontend_Developer"
