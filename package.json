@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "mdbook build",
-    "serve": "mdbook serve && mdbook watch",
+    "dev": "mdbook serve && mdbook watch",
     "push": "mdbook build && git add -A && git commit -m 'publish' && git push origin main"
   },
   "repository": {
