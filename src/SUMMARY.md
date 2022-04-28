@@ -5,3 +5,5 @@
   - [var](./javascript/var.md)
   - [data](./javascript/data.md)
   - [hosting](./javascript/hoisting.md)
+  - [json](./javascript/json.md)
+  - [scope](./javascript/scope.md)
