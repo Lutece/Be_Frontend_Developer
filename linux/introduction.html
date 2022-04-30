@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>data - Be_Software_Engineer</title>
+        <title>Linux - Be_Software_Engineer</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../javascript/introduction.html"><strong aria-hidden="true">2.</strong> Javascript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../javascript/var.html"><strong aria-hidden="true">2.1.</strong> var</a></li><li class="chapter-item expanded "><a href="../javascript/data.html" class="active"><strong aria-hidden="true">2.2.</strong> data</a></li><li class="chapter-item expanded "><a href="../javascript/hoisting.html"><strong aria-hidden="true">2.3.</strong> hosting</a></li><li class="chapter-item expanded "><a href="../javascript/json.html"><strong aria-hidden="true">2.4.</strong> json</a></li><li class="chapter-item expanded "><a href="../javascript/scope.html"><strong aria-hidden="true">2.5.</strong> scope</a></li></ol></li><li class="chapter-item expanded "><a href="../linux/introduction.html"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/books/1/introduction.html"><strong aria-hidden="true">3.1.</strong> 실습과 그림으로 배우는 리눅스 구조</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/books/1/chapter1.html"><strong aria-hidden="true">3.1.1.</strong> 컴퓨터 시스템의 개요</a></li><li class="chapter-item expanded "><a href="../linux/books/1/chapter2.html"><strong aria-hidden="true">3.1.2.</strong> 사용자 모드로 구현되는 기능</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../javascript/introduction.html"><strong aria-hidden="true">2.</strong> Javascript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../javascript/var.html"><strong aria-hidden="true">2.1.</strong> var</a></li><li class="chapter-item expanded "><a href="../javascript/data.html"><strong aria-hidden="true">2.2.</strong> data</a></li><li class="chapter-item expanded "><a href="../javascript/hoisting.html"><strong aria-hidden="true">2.3.</strong> hosting</a></li><li class="chapter-item expanded "><a href="../javascript/json.html"><strong aria-hidden="true">2.4.</strong> json</a></li><li class="chapter-item expanded "><a href="../javascript/scope.html"><strong aria-hidden="true">2.5.</strong> scope</a></li></ol></li><li class="chapter-item expanded "><a href="../linux/introduction.html" class="active"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/books/1/introduction.html"><strong aria-hidden="true">3.1.</strong> 실습과 그림으로 배우는 리눅스 구조</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux/books/1/chapter1.html"><strong aria-hidden="true">3.1.1.</strong> 컴퓨터 시스템의 개요</a></li><li class="chapter-item expanded "><a href="../linux/books/1/chapter2.html"><strong aria-hidden="true">3.1.2.</strong> 사용자 모드로 구현되는 기능</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,69 +134,20 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="자료형"><a class="header" href="#자료형">자료형</a></h1>
+                        <h1 id="리눅스와-관련된-내용을-정리하는-곳입니다"><a class="header" href="#리눅스와-관련된-내용을-정리하는-곳입니다">리눅스와 관련된 내용을 정리하는 곳입니다.</a></h1>
+<h2 id="책-목록"><a class="header" href="#책-목록">책 목록</a></h2>
 <ul>
-<li>Boolean : 논리적 값 (true, false)</li>
-<li>null : 존재하지 않거나 유효하지 않은 주소 표시</li>
-<li>undefined : 선언 후 값을 할당하지 않은 변수</li>
-<li>number : 정수, 실수 등의 숫자</li>
-<li>string : 빈 문자열이나 글자들을 표현하는 문자열</li>
-<li>symbol : 문자열과 함께 객체 property로 사용, ES6에 추가</li>
-<li>object : 두개 이상의 복잡한 개체 저장 가능</li>
+<li>1 : <a href="/linux/books/1/introduction.html">실습과 그림으로 배우는 리눅스 구조</a></li>
 </ul>
-<h2 id="원시-타입"><a class="header" href="#원시-타입">원시 타입</a></h2>
-<ul>
-<li>Booelan, null, undefined, number, string, symbol
-<ul>
-<li>null : null은 값이 비어 있다는 의미로 표현되는 자료형
-<ul>
-<li>존재하지 않는, 비어있는, 알 수 없는 값을 나타내는 데 사용</li>
-</ul>
-</li>
-<li>undefined : 값이 할당되어 있지 않은 상태를 나타낼 때 사용되는 자료형</li>
-<li>number: infinity, -infinity, NaN 같은 특수 숫자 값이 포함되어 있다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="객체-타입"><a class="header" href="#객체-타입">객체 타입</a></h2>
-<ul>
-<li>object : 다수의 원시 자료형을 포함하거나 복잡한 개체를 표현할 수 있는 자료형</li>
-</ul>
-<h3 id="객체-복사의-문제점"><a class="header" href="#객체-복사의-문제점">객체 복사의 문제점</a></h3>
-<ul>
-<li>Shallow Copy vs Deep Copy
-<ul>
-<li>Shallow Copy : Object.assing({}, object), for, spread operator, {...object}</li>
-<li>Deep Copy</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-js">Copy Object (그림과 함께 이해하기)
-
-function copyObj(obj) {
-  let result = {};
-
-  for(let key in obj) {
-    if(typeof obj[key] === &quot;object&quot;) result[key] = copyObj(obj[key]);
-    else result[key] = obj[key];
-  }
-
-  return result;
-}
-</code></pre>
-<pre><code class="language-js">JSON;
-
-JSON.parse(JSON.stringify(object));
-</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../javascript/var.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../javascript/scope.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../javascript/hoisting.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../linux/books/1/introduction.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -205,10 +156,10 @@ JSON.parse(JSON.stringify(object));
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../javascript/var.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../javascript/scope.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../javascript/hoisting.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../linux/books/1/introduction.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
