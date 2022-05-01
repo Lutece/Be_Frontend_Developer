@@ -4,4 +4,5 @@
 
 ## 기록하는 내용들
 
-- ### [Javascript](/javascript/introduction.html)
+- ### [Javascript](/javascript/introduction.md)
+- ### [Linux](/linux/introduction.md)
