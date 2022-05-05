@@ -12,3 +12,4 @@
     - [컴퓨터 시스템의 개요](./linux/books/1/chapter1.md)
     - [사용자 모드로 구현되는 기능](./linux/books/1/chapter2.md)
     - [프로세스 관리](./linux/books/1/chapter3.md)
+    - [프로세스 스케줄러](./linux/books/1/chapter4.md)
