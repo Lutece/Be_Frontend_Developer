@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>컴퓨터 시스템의 개요 - Be_Software_Engineer</title>
+        <title>프로세스 스케줄러 - Be_Software_Engineer</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../../javascript/introduction.html"><strong aria-hidden="true">2.</strong> Javascript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../javascript/var.html"><strong aria-hidden="true">2.1.</strong> var</a></li><li class="chapter-item expanded "><a href="../../../javascript/data.html"><strong aria-hidden="true">2.2.</strong> data</a></li><li class="chapter-item expanded "><a href="../../../javascript/hoisting.html"><strong aria-hidden="true">2.3.</strong> hosting</a></li><li class="chapter-item expanded "><a href="../../../javascript/json.html"><strong aria-hidden="true">2.4.</strong> json</a></li><li class="chapter-item expanded "><a href="../../../javascript/scope.html"><strong aria-hidden="true">2.5.</strong> scope</a></li></ol></li><li class="chapter-item expanded "><a href="../../../linux/introduction.html"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../linux/books/1/introduction.html"><strong aria-hidden="true">3.1.</strong> 실습과 그림으로 배우는 리눅스 구조</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter1.html" class="active"><strong aria-hidden="true">3.1.1.</strong> 컴퓨터 시스템의 개요</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter2.html"><strong aria-hidden="true">3.1.2.</strong> 사용자 모드로 구현되는 기능</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter3.html"><strong aria-hidden="true">3.1.3.</strong> 프로세스 관리</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter4.html"><strong aria-hidden="true">3.1.4.</strong> 프로세스 스케줄러</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../../javascript/introduction.html"><strong aria-hidden="true">2.</strong> Javascript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../javascript/var.html"><strong aria-hidden="true">2.1.</strong> var</a></li><li class="chapter-item expanded "><a href="../../../javascript/data.html"><strong aria-hidden="true">2.2.</strong> data</a></li><li class="chapter-item expanded "><a href="../../../javascript/hoisting.html"><strong aria-hidden="true">2.3.</strong> hosting</a></li><li class="chapter-item expanded "><a href="../../../javascript/json.html"><strong aria-hidden="true">2.4.</strong> json</a></li><li class="chapter-item expanded "><a href="../../../javascript/scope.html"><strong aria-hidden="true">2.5.</strong> scope</a></li></ol></li><li class="chapter-item expanded "><a href="../../../linux/introduction.html"><strong aria-hidden="true">3.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../linux/books/1/introduction.html"><strong aria-hidden="true">3.1.</strong> 실습과 그림으로 배우는 리눅스 구조</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter1.html"><strong aria-hidden="true">3.1.1.</strong> 컴퓨터 시스템의 개요</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter2.html"><strong aria-hidden="true">3.1.2.</strong> 사용자 모드로 구현되는 기능</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter3.html"><strong aria-hidden="true">3.1.3.</strong> 프로세스 관리</a></li><li class="chapter-item expanded "><a href="../../../linux/books/1/chapter4.html" class="active"><strong aria-hidden="true">3.1.4.</strong> 프로세스 스케줄러</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,50 +134,66 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="컴퓨터-시스템의-개요"><a class="header" href="#컴퓨터-시스템의-개요">컴퓨터 시스템의 개요</a></h1>
-<p>OS와 하드웨어의 관계 그리고 OS란 어떤 것인가를 간략하게 보게 된다.</p>
-<h3 id="컴퓨터-시스템이-동작할-때-하드웨어에서는-다음-순서가-반복된다"><a class="header" href="#컴퓨터-시스템이-동작할-때-하드웨어에서는-다음-순서가-반복된다">컴퓨터 시스템이 동작할 때 하드웨어에서는 다음 순서가 반복된다.</a></h3>
-<ol>
-<li>입력 장치 혹은 네트워크 어댑터를 통해서 컴퓨터에 무언가 처리 요청이 들어온다.</li>
-<li><strong>메모리에 있는 명령을 읽어 CPU에서 실행하고 그 결과 값을 다시 메모리의 다른 영역에 기록한다.</strong></li>
-<li>메모리의 데이터를 하드디스크(HDD)나 SSD 등의 저장 장치에 기록 또는 네트워크를 통해 다른 컴퓨터에 전송하거나 디스플레이 등의 출력 장치를 통해 사람에게 결과 값을 보여준다.</li>
-<li>1번부터 반복해서 실행한다.</li>
-</ol>
-<h3 id="프로그램은-크게-다음과-같은-종류로-나뉠-수-있다"><a class="header" href="#프로그램은-크게-다음과-같은-종류로-나뉠-수-있다">프로그램은 크게 다음과 같은 종류로 나뉠 수 있다.</a></h3>
+                        <h1 id="프로세스-스케줄러"><a class="header" href="#프로세스-스케줄러">프로세스 스케줄러</a></h1>
+<p>리눅스 커널에는 '프로세스 스케줄러' 기능이 있는데 이 기능은 여러 개의 프로세스를 동시에 동작시킨다. 정확히는 동시에 동작시키는 것처럼 보이게 한다.</p>
 <ul>
-<li>어플리케이션: 사용자가 직접 사용하는 프로그램</li>
-<li>미들웨어: 여러 가지 어플리케이션이 공통으로 사용하는 처리를 묶어서 애플리케이션의 실행을 도와준다. 예를 들어 웹 서버, 데이터베이스 등이 있다. 애플리케이션과 OS의 중간자 역할을 한다.</li>
-<li>OS(운영체제): 하드웨어를 직접 조작하여 어플리케이션이나 미들웨어의 실행에 필요한 기능을 제공한다.
-<ul>
-<li>OS는 여러 가지 프로그램을 프로세스라고 하는 단위로 실행한다.</li>
-</ul>
+<li>
+<p>하나의 CPU는 동시에 하나의 프로세스만 처리할 수 있다.</p>
+</li>
+<li>
+<p>하나의 CPU에 여러 개의 프로세스를 실행해야 할 때는 각 프로세스를 적절한 시간으로 쪼개서(타임 슬라이스) 번갈아 처리한다.</p>
+</li>
+<li>
+<p>프로세스를 종료시킬 때까지의 경과 시간은 프로세스 수에 비례하여 증가한다.</p>
+</li>
+<li>
+<p>각 프로세스는 대략 같은 타임 슬라이스를 가진다.</p>
 </li>
 </ul>
-<h3 id="리눅스와-하드웨어의-관계"><a class="header" href="#리눅스와-하드웨어의-관계">리눅스와 하드웨어의 관계</a></h3>
-<p><strong>리눅스의 중요한 역할은 외부 장치(이하 디바이스)를 조작하는 일이다.</strong> </p>
-<p>리눅스 같은 OS가 없으면 여러 개의 프로세스가 각각 디바이스를 조작하는 코드를 작성해야 한다.
-리눅스는 디바이스 드라이버라고 하는 프로그램을 통해 디바이스를 다룬다.</p>
-<p>CPU에는 커널 모드와 사용자 모드라고 하는 두 가지 모드가 있으며 커널 모드로 동작할 때만 디바이스에 접근할 수 있다.
-디바이스 드라이버는 커널 모드로 동작하고 프로세스는 사용자 모드로 동작한다.</p>
-<p><strong>커널모드에서 동작하는 것들</strong></p>
+<h2 id="라운드-로빈"><a class="header" href="#라운드-로빈">라운드 로빈</a></h2>
 <ul>
-<li>프로세스 관리 시스템</li>
-<li>프로세스 스케줄링</li>
-<li>메모리 관리 시스템</li>
+<li>프로세스들 사이에 우선순위를 두지 않고, 순서대로 시간단위(타임 퀀텀)로 CPU를 할당하는 방식</li>
 </ul>
-<p>OS의 핵심 부분이 되는 처리를 모아 담당하는 프로그램을 <strong>커널</strong>이라고 부른다.
-프로세스가 디바이스 드라이버를 포함한 커널이 제공하는 기능을 사용하려 할 때는 <strong>시스템 콜</strong>이라고 하는 특수한 처리를 통해 커널에 요청한다.
-커널은 시스템에 탑재된 CPU나 메모리 등의 리소스를 관리하고 있으며 리소스의 일부를 시스템에 존재하는 각 프로세스에 적절히 분배한다.</p>
+<h2 id="컨텍스트-스위치"><a class="header" href="#컨텍스트-스위치">컨텍스트 스위치</a></h2>
+<p>논리 CPU상에서 동작하는 프로세스가 바뀌는 것을 '컨텍스트 스위치'라고 부른다.</p>
+<h2 id="프로세스의-상태"><a class="header" href="#프로세스의-상태">프로세스의 상태</a></h2>
+<p>프로세스의 상태는 다음과 같다.</p>
+<ul>
+<li>실행 상태: 현재 논리 CPU를 사용하고 있다</li>
+<li>실행 대기 상태: CPU 시간이 할당되기를 기다리고 있다.</li>
+<li>슬립 상태: 이벤트가 발생하기를 기다리고 있으며 이벤트 발생까지는 CPU시간을 사용하지 않는다.</li>
+<li>좀비 상태: 프로세스가 종료한 뒤 부모 프로세스가 종료 상태를 인식할 때까지 기다리고 있다.</li>
+</ul>
+<h2 id="idle-상태"><a class="header" href="#idle-상태">idle 상태</a></h2>
+<ul>
+<li>'아무것도 하지 않는' 특수한 프로세스가 동작한다.</li>
+<li>시스템 전체가 CPU 시간을 거의 사용하지 않을 때</li>
+</ul>
+<h2 id="스루풋과-레이턴시"><a class="header" href="#스루풋과-레이턴시">스루풋과 레이턴시</a></h2>
+<p>각종 성능지표인 스루풋과 레이턴시에 대해 정리한다.</p>
+<ul>
+<li>스루풋: 단위 시간당 처리된 일의 양이며 높을수록 좋다. 
+( 완료한 프로세스의 수 / 경과 시간 )</li>
+<li>레이턴시: 각각의 처리가 시작부터 종료까지의 경과된 시간으로 짧을수록 좋다. 
+( 처리 종료 시간 - 처리 시작 시간 )</li>
+</ul>
+<h2 id="실제-시스템"><a class="header" href="#실제-시스템">실제 시스템</a></h2>
+<p>실제 시스템에 돌아가는 논리 CPU는 다음과 같은 상태를 정신 없이 오고 간다.</p>
+<ul>
+<li>idle 상태: 논리 CPU가 쉬고 있기 때문에 스루풋이 떨어지는 경향이 있다.</li>
+<li>프로세스가 동작 중: 실행 대기의 프로세스가 없기 때문에 이상적인 상태이다. 그러나 이러한 상태는 다음의 프로세스가 실행 가능한 상태가 되면, 2개의 프로세스의 레이턴시가 양쪽 다 길어진다.</li>
+<li>프로세스가 대기 중: 실행 대기 프로세스가 있다. 스루풋은 높지만 레이턴시가 길어지는 경향이 있다.</li>
+</ul>
+<h2 id="논리-cpu가-여러-개일-때-스케줄링"><a class="header" href="#논리-cpu가-여러-개일-때-스케줄링">논리 CPU가 여러 개일 때 스케줄링</a></h2>
+<p>논리 CPU가 여러 개일 때 스케줄링은 어떻게 될까? 이 때는 로드밸런서 혹은 글로벌 스케줄러라는 기능이 동작한다. 로드밸런서란 여러 개의 논리 CPU에 프로세스를 공평하게 분배해주는 역할을 한다.
+프로세스를 할당받은 각 논리 CPU안에서 1개의 논리 CPU가 있을 떄와 마찬가지로 각 프로세스에 공평하게 CPU 시간을 분배한다.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../../linux/books/1/introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../../linux/books/1/chapter3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../../../linux/books/1/chapter2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -185,11 +201,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../../linux/books/1/introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../../linux/books/1/chapter3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../../../linux/books/1/chapter2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
