@@ -6,3 +6,5 @@
 2. [사용자 모드로 구현되는 기능](./chapter2.md)
 3. [프로세스 관리](./chater3.md)
 4. [프로세스 스케줄러](./chapter4.md)
+5. [메모리 계층](./chapter6.md)
+6. [파일 시스템](./chapter7.md)
