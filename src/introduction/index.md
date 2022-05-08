@@ -5,3 +5,4 @@
 - [Javascript](/javascript/introduction.md)
 - [Java](/java/book/1/basic.md)
 - [Linux](/linux/introduction.md)
+- [Data Structure and Algorithm](/DT_and_AL/introduction.md)
