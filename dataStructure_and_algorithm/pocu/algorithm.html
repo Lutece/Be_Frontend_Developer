@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html lang="ko" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>알고리즘의 정의와 효율성 - Be_Software_Engineer</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../../introduction/index.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../../dataStructure_and_algorithm/introduction.html"><strong aria-hidden="true">2.</strong> Data Structure and Algorithm</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../dataStructure_and_algorithm/pocu/introduction.html"><strong aria-hidden="true">2.1.</strong> pocu</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../dataStructure_and_algorithm/pocu/algorithm.html" class="active"><strong aria-hidden="true">2.1.1.</strong> 알고리즘의 정의와 효율성</a></li><li class="chapter-item expanded "><a href="../../dataStructure_and_algorithm/pocu/bigO.html"><strong aria-hidden="true">2.1.2.</strong> 빅오표기법</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../java/introduction.html"><strong aria-hidden="true">3.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../java/pocu/1.html"><strong aria-hidden="true">3.1.</strong> pocu</a></li></ol></li><li class="chapter-item expanded "><a href="../../javascript/introduction.html"><strong aria-hidden="true">4.</strong> Javascript</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../javascript/var.html"><strong aria-hidden="true">4.1.</strong> var</a></li><li class="chapter-item expanded "><a href="../../javascript/data.html"><strong aria-hidden="true">4.2.</strong> data</a></li><li class="chapter-item expanded "><a href="../../javascript/hoisting.html"><strong aria-hidden="true">4.3.</strong> hosting</a></li><li class="chapter-item expanded "><a href="../../javascript/json.html"><strong aria-hidden="true">4.4.</strong> json</a></li><li class="chapter-item expanded "><a href="../../javascript/scope.html"><strong aria-hidden="true">4.5.</strong> scope</a></li></ol></li><li class="chapter-item expanded "><a href="../../linux/introduction.html"><strong aria-hidden="true">5.</strong> Linux</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linux/books/1/introduction.html"><strong aria-hidden="true">5.1.</strong> 실습과 그림으로 배우는 리눅스 구조</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linux/books/1/chapter1.html"><strong aria-hidden="true">5.1.1.</strong> 컴퓨터 시스템의 개요</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter2.html"><strong aria-hidden="true">5.1.2.</strong> 사용자 모드로 구현되는 기능</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter3.html"><strong aria-hidden="true">5.1.3.</strong> 프로세스 관리</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter4.html"><strong aria-hidden="true">5.1.4.</strong> 프로세스 스케줄러</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter5.html"><strong aria-hidden="true">5.1.5.</strong> 메모리 관리</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter6.html"><strong aria-hidden="true">5.1.6.</strong> 메모리 계층</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter7.html"><strong aria-hidden="true">5.1.7.</strong> 파일 시스템</a></li><li class="chapter-item expanded "><a href="../../linux/books/1/chapter8.html"><strong aria-hidden="true">5.1.8.</strong> 저장 장치</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Be_Software_Engineer</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="알고리즘의-정의"><a class="header" href="#알고리즘의-정의">알고리즘의 정의</a></h1>
+<h2 id="컴퓨터-공학에서의-알고리즘-정의"><a class="header" href="#컴퓨터-공학에서의-알고리즘-정의">컴퓨터 공학에서의 알고리즘 정의</a></h2>
+<ul>
+<li>어떤 부류의 문제를 해결하는 컴퓨터로 구현 가능한 명백한 명령어들</li>
+<li>우리가 작성하는 거의 모든 코드는 알고리즘이다.</li>
+</ul>
+<h2 id="훌륭한-알고리즘이-갖춰야-할-자질"><a class="header" href="#훌륭한-알고리즘이-갖춰야-할-자질">훌륭한 알고리즘이 갖춰야 할 자질</a></h2>
+<ul>
+<li>입력과 출력이 명확히 정의되어 있어야 함
+<ul>
+<li>입력은 시작 시 비어있을 수도 있음</li>
+<li>선조건에 대해 생각해봐야 함 (매개변수는 항상 양수다?)</li>
+</ul>
+</li>
+<li>알고리즘의 각 단계가 명확하며 모호하지 않아야 함</li>
+<li>유한 식나 안에 결과(출력)가 나와야 함</li>
+<li>포팅이 가능한 의사코드 작성하기 (포팅이 어려운 컴퓨터 코드를 포함하면 안됨)
+<ul>
+<li>거의 모든 언어에 공통되는 연산만 사용하기 (특정 언어에만 있는 기능은 피하기)</li>
+<li>결국 하드웨어와 기계어/어셈블리어 수준에서 지원하는 것들</li>
+<li>고수준 언어 중에는 C에서 지원하는 것 정도 (단, 포인터 연산은 제외)</li>
+</ul>
+</li>
+<li>같은 문제를 푸는 다양한 방법 중에 가장 효율적임</li>
+</ul>
+<h2 id="알고리즘-공부를-해도-안-느는-프로그래머들"><a class="header" href="#알고리즘-공부를-해도-안-느는-프로그래머들">알고리즘 공부를 해도 안 느는 프로그래머들</a></h2>
+<ul>
+<li>하드웨어가 어떤 연산을 지원하는지 모름</li>
+<li>이미 존재하는 마법 같은 함수만 호출해봄
+(구현이 어떻게 되어있는 지 생각해보지 않음)</li>
+<li>컴퓨터에 데이터가 어떻게 저장되는지 모름</li>
+<li>힙과 스택 메모리의 차이에 대해 모름 등</li>
+</ul>
+<h2 id="알고리즘의-효율성"><a class="header" href="#알고리즘의-효율성">알고리즘의 효율성</a></h2>
+<ul>
+<li>자원을 효율적 사용을 뜻함
+<ul>
+<li>자원
+<ul>
+<li>시간: CPU 속도 등</li>
+<li>공간/용량: 메모리 사용량 등</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>시간과 공간은 종종 상반 관계</li>
+<li>자원을 많이 사용할수록 그 알고리즘이 복잡하다고 말함
+<ul>
+<li>시간 복잡도</li>
+<li>공간 복잡도</li>
+<li>알고리즘 복잡도를 표현하는 방법 중 하나: 빅오(Big-O) 표기법</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c">
+public int add1(int num1, int num2) {
+  int sum = num1;
+
+  for (int i = 0; i &lt; num2; ++i) {
+    ++sum;
+  }
+
+  return sum;
+};
+
+public int add2(int num1, int num2) {
+  return num1 + num2;
+};
+
+
+add1(10, N);
+//O(N)
+
+add2(10, N);
+//O(1)
+
+</code></pre>
+<h2 id="알고리즘의-효율성-분석은-다소-추상적이다"><a class="header" href="#알고리즘의-효율성-분석은-다소-추상적이다">알고리즘의 효율성 분석은 다소 추상적이다.</a></h2>
+<ul>
+<li>알고리즘 공부를 할 때는 하드웨어 차이에 신경을 안 씀
+<ul>
+<li>추상적인 기계에서 알고리즘을 실행한다 가정</li>
+<li>알고리즘 자체에 집중하도록 도와줌</li>
+</ul>
+</li>
+<li>랜덤 접근 기계(random-access machine, RAM)
+<ul>
+<li>다양한 하드웨어를 일반적인 형태로 대표하는 가상의 기계</li>
+<li>레지스터를 갖춘 CPU 1개</li>
+<li>정수와 부동소수점 저장 가능</li>
+<li>메모리 간접 참조(indirection) 지원</li>
+<li>캐시 메모리나 가상 메모리 등은 없음</li>
+</ul>
+</li>
+</ul>
+<h2 id="주의-알고리즘의-효율성과-실제-성능"><a class="header" href="#주의-알고리즘의-효율성과-실제-성능">주의: 알고리즘의 효율성과 실제 성능</a></h2>
+<ul>
+<li>실제 코드 실행 속도는 하드웨어 따라 매우 달라질 수 있음</li>
+<li>따라서 실무에서는 효율성 낮은 알고리즘이 더 빠르기도 함
+<ul>
+<li>실무 최적화 기초: 실제 하드웨어에서의 성능 측정</li>
+<li>컴퓨터 구조를 공부해야 하는 이유</li>
+</ul>
+</li>
+<li>공부법
+<ul>
+<li>알고리즘 공부를 통해 이론상의 성능에 대해 확실히 학습할 것</li>
+<li>하드웨어에 따라 달라지는 부분은 추가 지식을 늘려나가면 됨</li>
+</ul>
+</li>
+</ul>
+<h2 id="알고리즘의-올바름-검증"><a class="header" href="#알고리즘의-올바름-검증">알고리즘의 올바름 검증</a></h2>
+<ul>
+<li>알고리즘이 올바로 작동하는지 검증하는 것도 중요한 부분</li>
+<li>실무는 버그 처리 프로세스를 따름</li>
+<li>제대로 작동 안 하면 효율성을 논할 가치도 없음</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../dataStructure_and_algorithm/pocu/introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../dataStructure_and_algorithm/pocu/bigO.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../dataStructure_and_algorithm/pocu/introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../dataStructure_and_algorithm/pocu/bigO.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
