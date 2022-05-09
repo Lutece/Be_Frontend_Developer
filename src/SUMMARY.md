@@ -1,10 +1,10 @@
 # Summary
 
 - [Introduction](./introduction/index.md)
-- [Data Structure and Algorithm](./DT_and_AL/introduction.md)
-  - [pocu](./DT_and_AL/pocu/introduction.md)
-    - [알고리즘의 정의와 효율성](./DT_and_AL/pocu/algorithm.md)
-    - [빅오표기법](./DT_and_AL/pocu/bigO.md)
+- [Data Structure and Algorithm](./dt_and_al/introduction.md)
+  - [pocu](./dt_and_al/pocu/introduction.md)
+    - [알고리즘의 정의와 효율성](./dt_and_al/pocu/algorithm.md)
+    - [빅오표기법](./dt_and_al/pocu/bigO.md)
 - [Java](./java/introduction.md)
   - [pocu](./java/pocu/1.md)
 - [Javascript](./javascript/introduction.md)
