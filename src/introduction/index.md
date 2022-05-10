@@ -3,6 +3,6 @@
 ## 더 나은 개발자가 되기 위해...
 
 - [Javascript](/javascript/introduction.md)
-- [Java](/java/book/1/basic.md)
+- [Java](/java/introduction.md)
 - [Linux](/linux/introduction.md)
 - [Data Structure and Algorithm](/dataStructure_and_algorithm/introduction.md)
