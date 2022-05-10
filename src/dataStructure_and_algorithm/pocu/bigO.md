@@ -8,7 +8,7 @@
 ## 빅오 표기법 (Big-O notation)
 - 대문자 O를 이용해 표기
 - 주로 알고리즘을 분류하기 위해 사용
-  - O(1), O(log n), O(n), O(nlog n), O(n2), O(n!)
+  - O(1), O(log n), O(n), O(nlog n), O(n^2), O(n!)
 - O의 의미
   - order of the function (대략 그 함수 정도)
 
@@ -23,7 +23,7 @@
 
 ### 순서 (실행 속도가 가장 작은 순부터 큰 순서까지)
 
-- O(1) < O(log n) < O(n) < O(nlog n) < O(n2) < O(n!)
+- O(1) < O(log n) < O(n) < O(nlog n) < O(n^2) < O(n!)
 
 ### O(1) 알고리즘 (배열 기준)
 - 입력 데이터의 크기 N에 상관없이 언제나 일정한 시간이 걸림
