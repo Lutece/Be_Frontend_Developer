@@ -26,6 +26,8 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -387,7 +389,7 @@ add2(10, N);
 <li>대문자 O를 이용해 표기</li>
 <li>주로 알고리즘을 분류하기 위해 사용
 <ul>
-<li>O(1), O(log n), O(n), O(nlog n), O(n2), O(n!)</li>
+<li>O(1), O(log n), O(n), O(nlog n), O(n^2), O(n!)</li>
 </ul>
 </li>
 <li>O의 의미
@@ -413,7 +415,7 @@ add2(10, N);
 </ul>
 <h3 id="순서-실행-속도가-가장-작은-순부터-큰-순서까지-1"><a class="header" href="#순서-실행-속도가-가장-작은-순부터-큰-순서까지-1">순서 (실행 속도가 가장 작은 순부터 큰 순서까지)</a></h3>
 <ul>
-<li>O(1) &lt; O(log n) &lt; O(n) &lt; O(nlog n) &lt; O(n2) &lt; O(n!)</li>
+<li>O(1) &lt; O(log n) &lt; O(n) &lt; O(nlog n) &lt; O(n^2) &lt; O(n!)</li>
 </ul>
 <h3 id="o1-알고리즘-배열-기준-1"><a class="header" href="#o1-알고리즘-배열-기준-1">O(1) 알고리즘 (배열 기준)</a></h3>
 <ul>
@@ -1263,7 +1265,9 @@ OOM 현상으로 인해 OOM Killer라는 기능이 존재하는데
         <!-- Custom JS scripts -->
         <script type="text/javascript">
         window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
         });
         </script>
     </body>
