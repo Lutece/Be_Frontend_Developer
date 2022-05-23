@@ -20,6 +20,7 @@
     - [math](./javascript/data/math.md)
     - [number](./javascript/data/number.md)
     - [string](./javascript/data/String.md)
+    - [symbol](./javascript/data/symbol.md)
   - [hosting](./javascript/hoisting.md)
   - [json](./javascript/json.md)
   - [scope](./javascript/scope.md)
