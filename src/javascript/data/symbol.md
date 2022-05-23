@@ -50,6 +50,7 @@ Symbol.for('uid') === Symbol.for('uid') //true
 - 미리 정의되어있는 심볼들
 - 자바스크립트의 API 명세를 개발자들에게 드러내기 위한 수단으로 사용되는 심볼
     - ECMAScript 6
+    - 시스템 심볼(System Symbol)이라 부르기도 한다.
 
 ```jsx
 function Car(make, model, year) {
@@ -74,3 +75,9 @@ Symbol.hasInstance
 
 Symbol.iterator
 - 이터레이터를 반환하는 메서드
+
+## DeepDive 참고자료
+- https://meetup.toast.com/posts/312
+- https://ko.javascript.info/symbol
+- https://exploringjs.com/es6/ch_symbols.html
+- https://tc39.es/ecma262/multipage/ecmascript-data-types-and-values.html#sec-well-known-symbols
