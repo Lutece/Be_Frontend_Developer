@@ -844,9 +844,6 @@ function benchmark(callback_func) {
 <li>심볼은 원시타입이기 때문에 new 키워드를 사용하지 않는다.</li>
 </ul>
 </li>
-<li>심볼은 비공개 객체 멤버를 만들기 위한 한 가지 방법에서 출발했다.</li>
-<li>심볼 참조 없이 접근할 수 없는 열거 불가능 프로퍼티를 만드는데 사용된다.</li>
-<li>외부 개발자로부터 보호할 필요가 있는 기능에 적합하다</li>
 <li>접근을 제한하는 방식을 제공한다.
 <ul>
 <li>기존의 방식은 프로퍼티의 문자열에 의존한다.</li>
@@ -855,7 +852,7 @@ function benchmark(callback_func) {
 </li>
 <li>기존 객체 동작 알고리즘을 확장할 수 있다.
 <ul>
-<li>Symbol.iterator()메서드를 사용해 기존 객체가 iterator 객체로 재정의할 수 있다.</li>
+<li>Symbol.iterator()메서드를 사용해 기존 객체가 iterator 객체로 재정의될 수 있다.</li>
 </ul>
 </li>
 <li>심볼 인자에 문자열은 toString() 호출 시 [[Description]] 프로퍼티에 저장된다.</li>
@@ -879,12 +876,16 @@ console.log(firstName); // &quot;Symbol(first name)&quot;
 <li>Symbol은 유일한 값과 전역 값을 나눠 사용할 수 있다.</li>
 <li>Symbol.for은 전역 심볼 저장소를 검색 후 값이 있으면 반환한다.
 <ul>
-<li>값이 없으면 새로운 심볼 값을 생성한 후 생성된 심볼 값을 반환한다.</li>
+<li>값이 없으면 새로운 심볼 값을 전역 심볼 저장소에 생성한 후 생성된 심볼 값을 반환한다.</li>
 </ul>
 </li>
-<li>Symbol.keyFor(Symbol 값) 메서드는 전역 심볼 저장소의 키를 반환
+<li>Symbol.keyFor(Symbol 값) 메서드는 전역 심볼 저장소의 키를 반환한다.
 <ul>
-<li>인자로 들어간 심볼 값이 전역 값인지 아닌 지 구분할 수 있다.</li>
+<li>인자로 들어간 심볼 값이 전역 값인지 아닌 지 구분할 수 있다.
+<ul>
+<li>전역 값일 경우 심볼 인자값이 반환된다. 아닐 경우 undefined를 반환한다.</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>전역 심볼은 중복을 피하기 위해 prefix를 사용하는 것이 좋다.</li>
